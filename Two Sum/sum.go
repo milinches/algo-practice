@@ -14,7 +14,20 @@ func TwoSum(nums []int, target int) []int {
 	return []int{}
 }
 
+func TwoSums(nums []int, target int) []int {
+	makeMap := make(map[int]int)
+	for index, value := range nums {
+		if mapValue, okay := makeMap[target-value]; okay {
+			return []int{mapValue, index}
+		}
+		makeMap[value] = index
+	}
+	return []int{}
+}
+
 func main() {
-	d := TwoSum([]int{1, 2, 3, 4, 5}, 3)
+	d := TwoSum([]int{3, 2, 4}, 6)
 	fmt.Println(d)
+	s := TwoSums([]int{3, 2, 4}, 6)
+	fmt.Println(s)
 }
