@@ -1,1 +1,3 @@
-package AddTwoNumbers
+package main
+
+func main() {}
